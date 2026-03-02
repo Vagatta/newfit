@@ -1,14 +1,11 @@
 # build output
 dist/
-gym-web/dist/
 
 # generated types
 .astro/
-gym-web/.astro/
 
 # dependencies
 node_modules/
-gym-web/node_modules/
 
 # logs
 npm-debug.log*
