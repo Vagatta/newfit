@@ -2,7 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="NEWFIT — Tu Gimnasio de Confianza" description="Entrena con nosotros. Instalaciones premium, equipamiento de última generación y entrenadores profesionales. Descubre nuestras tarifas.">
+<Layout title="NEWFIT — Tu Gimnasio en Tudela de Duero" description="Entrena con nosotros en el mejor gimnasio de Tudela de Duero. Instalaciones premium, equipamiento de última generación y entrenadores profesionales.">
+
+  <!-- Schema.org para LocalBusiness -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExerciseGym",
+      "name": "NEWFIT",
+      "image": "https://newfitgimnasio.com/images/hero-bg.png",
+      "@id": "https://newfitgimnasio.com/",
+      "url": "https://newfitgimnasio.com/",
+      "telephone": "+34633656503",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. del Veintinueve de Diciembre, 5",
+        "addressLocality": "Tudela de Duero",
+        "postalCode": "47320",
+        "addressRegion": "Valladolid",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.5847,
+        "longitude": -4.5802
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "23:00"
+        }
+      ]
+    }
+  </script>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -35,11 +78,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-content">
       <div class="hero-badge">Entrena · Transforma · Supera</div>
       <h1>
-        Supera tus
-        <span class="highlight">Límites</span>
+        Tu Gimnasio en
+        <span class="highlight">Tudela de Duero</span>
       </h1>
       <p class="hero-subtitle">
-        Instalaciones de última generación, entrenadores profesionales y una comunidad que te impulsará a alcanzar tus metas.
+        Supera tus límites con instalaciones de última generación y entrenadores profesionales en el espacio fitness de referencia en Tudela de Duero.
       </p>
       <div class="hero-buttons">
         <a href="#tarifas" class="btn-primary">Ver Tarifas</a>
@@ -191,7 +234,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <h4>Dirección</h4>
-              <p>Calle Principal 123<br/>28001 Madrid, España</p>
+              <p>C. del Veintinueve de Diciembre, 5<br/>47320 Tudela de Duero, Valladolid</p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -200,7 +243,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <h4>Teléfono</h4>
-              <p><a href="tel:+34912345678">+34 912 345 678</a></p>
+              <p><a href="tel:+34633656503">+34 633 65 65 03</a></p>
             </div>
           </div>
           <div class="contact-info-item">
@@ -218,7 +261,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <h4>Horario</h4>
-              <p>Lunes a Viernes: 7:00 - 23:00<br/>Sábados: 8:00 - 21:00<br/>Domingos: 9:00 - 15:00</p>
+              <p>Lunes a Domingo:<br/>6:00 - 23:00</p>
             </div>
           </div>
         </div>
@@ -247,7 +290,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Map -->
       <div class="contact-map reveal">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.223540218498!2d-3.7037902!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d15c6beb1%3A0x1234567890abcdef!2sMadrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890"
+          src="https://maps.google.com/maps?q=C.%20del%20Veintinueve%20de%20Diciembre,%205,%20Tudela%20de%20Duero,%20Valladolid&t=&z=16&ie=UTF8&iwloc=&output=embed"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
