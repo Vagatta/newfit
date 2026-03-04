@@ -481,9 +481,42 @@ h6 {
   background: var(--black);
 }
 
+.pricing-group {
+  margin-bottom: 80px;
+}
+
+.pricing-group:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-group-title {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pricing-group-title::before,
+.pricing-group-title::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  max-width: 200px;
+}
+
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   align-items: stretch;
 }
@@ -548,31 +581,48 @@ h6 {
   transform: rotate(45deg);
 }
 
-.pricing-icon {
-  width: 56px;
-  height: 56px;
+.pricing-icon-wrapper {
+  width: 60px;
+  height: 60px;
   margin-bottom: 24px;
-  filter: invert(1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: all var(--transition);
 }
 
-.pricing-card.featured .pricing-icon {
-  filter: invert(19%) sepia(97%) saturate(7404%) hue-rotate(348deg) brightness(90%) contrast(110%);
+.pricing-card:hover .pricing-icon-wrapper {
+  transform: scale(1.1);
+  background-color: var(--red);
+}
+
+.pricing-card.featured .pricing-icon-wrapper {
+  background-color: var(--red);
 }
 
 .pricing-name {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.4rem;
+  font-family: var(--font-workout);
+  font-weight: normal;
+  font-size: 2rem;
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   margin-bottom: 8px;
+  line-height: 1.1;
 }
 
 .pricing-desc {
   color: var(--gray);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   margin-bottom: 24px;
+  line-height: 1.4;
 }
 
 .pricing-price {

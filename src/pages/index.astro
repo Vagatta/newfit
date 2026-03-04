@@ -105,70 +105,203 @@ import Layout from '../layouts/Layout.astro';
         <h2>Tarifas</h2>
         <p>Elige el plan que mejor se adapte a ti. Sin permanencia, sin compromiso.</p>
       </div>
-      <div class="pricing-grid">
+      <div class="pricing-groups">
 
-        <!-- Basic -->
-        <div class="pricing-card reveal">
-          <img src="/icons/running.svg" alt="Icono plan básico" class="pricing-icon" />
-          <h3 class="pricing-name">Básico</h3>
-          <p class="pricing-desc">Ideal para empezar tu rutina</p>
-          <div class="pricing-price">
-            <span class="amount">29€</span>
-            <span class="period">/mes</span>
+        <!-- Grupo 1: Accesos -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Entrenos y Bonos</h3>
+          <div class="pricing-grid">
+            <!-- Pase 1 Día -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/treadmill.svg); mask-image: url(/icons/treadmill.svg);"></div>
+              <h3 class="pricing-name">Pase 1 Día</h3>
+              <p class="pricing-desc">Pago Único · 1 Acceso</p>
+              <div class="pricing-price">
+                <span class="amount">8€</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Sin compromiso</li>
+                <li>Activación 0€</li>
+                <li>Acceso completo</li>
+                <li>Uso en el día</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/entradas.aspx?header=false&footer=false&nav=false&lang=es-ES&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Bono 5 Accesos -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/running.svg); mask-image: url(/icons/running.svg);"></div>
+              <h3 class="pricing-name">Bono 5 Accesos</h3>
+              <p class="pricing-desc">Pago Único · 5 Entrenos</p>
+              <div class="pricing-price">
+                <span class="amount">19.90€</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Ideal para alternar</li>
+                <li>Precio por sesión: 3.98€</li>
+                <li>Sin caducidad inmediata</li>
+                <li>Activación 0€</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=680&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
           </div>
-          <ul class="pricing-features">
-            <li>Acceso a sala de musculación</li>
-            <li>Zona de cardio</li>
-            <li>Vestuarios y duchas</li>
-            <li>Horario completo</li>
-            <li class="disabled">Clases dirigidas</li>
-            <li class="disabled">Entrenador personal</li>
-            <li class="disabled">Zona spa y sauna</li>
-          </ul>
-          <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=664&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">Elegir Plan</a>
         </div>
 
-        <!-- Premium -->
-        <div class="pricing-card featured reveal">
-          <div class="pricing-badge">Popular</div>
-          <img src="/icons/muscle-flexing.svg" alt="Icono plan premium" class="pricing-icon" />
-          <h3 class="pricing-name">Premium</h3>
-          <p class="pricing-desc">El más completo para progresar</p>
-          <div class="pricing-price">
-            <span class="amount">49€</span>
-            <span class="period">/mes</span>
+        <!-- Grupo 2: Cuotas Individuales -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Cuotas Individuales</h3>
+          <div class="pricing-grid">
+            <!-- Mensual CP -->
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Más Popular</div>
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/muscle-flexing.svg); mask-image: url(/icons/muscle-flexing.svg);"></div>
+              <h3 class="pricing-name">Mensual CP</h3>
+              <p class="pricing-desc">Con Compromiso 12 Meses</p>
+              <div class="pricing-price">
+                <span class="amount">35€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Cuota Bonificada</li>
+                <li>Acceso 24/7</li>
+                <li>Todas las zonas</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=665&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Mensual SP -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/bench-press.svg); mask-image: url(/icons/bench-press.svg);"></div>
+              <h3 class="pricing-name">Mensual SP</h3>
+              <p class="pricing-desc">Sin Compromiso Permanencia</p>
+              <div class="pricing-price">
+                <span class="amount">39€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Baja en cualquier momento</li>
+                <li>Todas las instalaciones</li>
+                <li>Sin ataduras</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=664&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Fines de Semana -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/skipping-rope.svg); mask-image: url(/icons/skipping-rope.svg);"></div>
+              <h3 class="pricing-name">Plan Finde</h3>
+              <p class="pricing-desc">Viernes, Sábado y Domingo</p>
+              <div class="pricing-price">
+                <span class="amount">22.50€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Para fines de semana</li>
+                <li>Ideal vida ocupada</li>
+                <li>Sin permanencia</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=679&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Trimestral CP -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/deadlift.svg); mask-image: url(/icons/deadlift.svg);"></div>
+              <h3 class="pricing-name">Trimestral CP</h3>
+              <p class="pricing-desc">Compromiso 12 Meses</p>
+              <div class="pricing-price">
+                <span class="amount">90€</span>
+                <span class="period">/trimestre</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Equivale a 30€/mes</li>
+                <li>Pago cada 3 meses</li>
+                <li>Plan seguimiento</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=676&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Trimestral SP -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/squats.svg); mask-image: url(/icons/squats.svg);"></div>
+              <h3 class="pricing-name">Trimestral SP</h3>
+              <p class="pricing-desc">Sin Compromiso Permanencia</p>
+              <div class="pricing-price">
+                <span class="amount">105€</span>
+                <span class="period">/trimestre</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Equivale a 35€/mes</li>
+                <li>Libertad de renovación</li>
+                <li>Acceso ilimitado</li>
+              </ul>
+              <a href="/alta-trimestral-sp" class="btn-primary">¡Quiero esta!</a>
+            </div>
           </div>
-          <ul class="pricing-features">
-            <li>Acceso a sala de musculación</li>
-            <li>Zona de cardio</li>
-            <li>Vestuarios y duchas</li>
-            <li>Horario completo</li>
-            <li>Clases dirigidas ilimitadas</li>
-            <li>Evaluación mensual</li>
-            <li class="disabled">Zona spa y sauna</li>
-          </ul>
-          <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=664&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">Elegir Plan</a>
         </div>
 
-        <!-- VIP -->
-        <div class="pricing-card reveal">
-          <img src="/icons/personal-trainer.svg" alt="Icono plan VIP" class="pricing-icon" />
-          <h3 class="pricing-name">VIP</h3>
-          <p class="pricing-desc">La experiencia completa</p>
-          <div class="pricing-price">
-            <span class="amount">79€</span>
-            <span class="period">/mes</span>
+        <!-- Grupo 3: Cuotas Especiales y Ahorro -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Cuotas Especiales</h3>
+          <div class="pricing-grid">
+            <!-- Duo -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/muscle-flexing.svg); mask-image: url(/icons/muscle-flexing.svg);"></div>
+              <h3 class="pricing-name">Cuota Duo</h3>
+              <p class="pricing-desc">Entrena con tu Pareja/Amigo</p>
+              <div class="pricing-price">
+                <span class="amount">70€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Motivación compartida</li>
+                <li>Precio conjunto</li>
+                <li>Todas las zonas</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=667&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Familiar -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/personal-trainer.svg); mask-image: url(/icons/personal-trainer.svg);"></div>
+              <h3 class="pricing-name">Familiar 3M</h3>
+              <p class="pricing-desc">Hasta 3 Miembros Familiares</p>
+              <div class="pricing-price">
+                <span class="amount">105€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Ahorro en familia</li>
+                <li>Precio total por 3</li>
+                <li>Sin permanencia</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=678&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Anual -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/battle-ropes.svg); mask-image: url(/icons/battle-ropes.svg);"></div>
+              <h3 class="pricing-name">Cuota Anual</h3>
+              <p class="pricing-desc">Pago Único Anual</p>
+              <div class="pricing-price">
+                <span class="amount">340€</span>
+                <span class="period">/año</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Sin compromiso permanencia</li>
+                <li>Sencillo y directo</li>
+                <li>Mejor precio total</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=677&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
           </div>
-          <ul class="pricing-features">
-            <li>Acceso a sala de musculación</li>
-            <li>Zona de cardio</li>
-            <li>Vestuarios y duchas</li>
-            <li>Horario completo</li>
-            <li>Clases dirigidas ilimitadas</li>
-            <li>Entrenador personal 2x/sem</li>
-            <li>Zona spa y sauna</li>
-          </ul>
-          <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=664&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">Elegir Plan</a>
         </div>
 
       </div>
@@ -313,4 +446,25 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </footer>
 
+
+  <script>
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const nombre = formData.get('nombre');
+        const email = formData.get('email');
+        const asunto = formData.get('asunto') || 'Sin asunto';
+        const message = formData.get('mensaje');
+
+        const text = `*Nueva consulta desde la web*\n\n*Nombre:* ${nombre}\n*Email:* ${email}\n*Asunto:* ${asunto}\n*Mensaje:* ${message}`;
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=34633656503&text=${encodedText}`;
+
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+  </script>
 </Layout>
