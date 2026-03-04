@@ -262,16 +262,18 @@ h6 {
 }
 
 .navbar-logo {
-  font-family: var(--font-workout);
-  font-size: 2rem;
-  color: var(--white);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-logo em {
-  color: var(--red);
-  font-style: italic;
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.navbar-logo:hover img {
+  transform: scale(1.05);
 }
 
 .navbar-links {
@@ -1317,8 +1319,27 @@ h6 {
   border-top-color: #E0E0E0;
 }
 
-[data-theme="light"] .footer-logo {
-  color: #0A0A0A;
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.footer-logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* Footer logo in light mode should be black */
+[data-theme="light"] .footer-logo img {
+  filter: brightness(0);
+}
+
+/* Navbar logo in light mode should be black ONLY when scrolled (white background) */
+/* On the hero (non-scrolled), it stays white because the hero is always dark */
+[data-theme="light"] .navbar.scrolled .navbar-logo img {
+  filter: brightness(0);
 }
 
 [data-theme="light"] .footer p {
