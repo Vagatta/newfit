@@ -1115,6 +1115,18 @@ h6 {
 /* ========================================
    THEME SWITCH BUTTON
    ======================================== */
+.contact-form-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+  display: block;
+}
+
+.contact-form-note span {
+  display: block;
+}
+
 .theme-switch {
   width: 40px;
   height: 40px;
