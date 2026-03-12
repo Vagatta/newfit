@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../../public/images/hero-bg.png';
+import galleryGeneral from '../../public/images/general.webp';
+import galleryZonaPesas from '../../public/images/zona_pesas.webp';
+import galleryPesas from '../../public/images/pesas.webp';
+import galleryCintas from '../../public/images/cintas.webp';
 ---
 
 <Layout title="NEWFIT — Tu Gimnasio en Tudela de Duero" description="Entrena con nosotros en el mejor gimnasio de Tudela de Duero. Instalaciones premium, equipamiento de última generación y entrenadores profesionales.">
@@ -50,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#hero" class="navbar-logo">
+      <a href="#hero" class="navbar-logo" aria-label="Ir al inicio">
         <img src="/icons/newfit_blanco.svg" alt="NEWFIT Logo" width="150" height="34" />
       </a>
       <button class="theme-switch" id="theme-switch" aria-label="Cambiar tema de color" title="Cambiar tema">
@@ -75,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="/images/hero-bg.png" alt="Interior del gimnasio con equipamiento profesional" width="1920" height="1080" loading="eager" />
+      <Image src={heroBg} alt="Interior del gimnasio con equipamiento profesional" width={1920} height={1080} loading="eager" />
     </div>
     <div class="hero-content">
       <h1>
@@ -317,27 +323,27 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="gallery-grid">
         <div class="gallery-item reveal">
-          <img src="/images/general.webp" alt="Vista general de nuestras instalaciones premium" width="800" height="400" loading="lazy" />
+          <Image src={galleryGeneral} alt="Vista general de nuestras instalaciones premium" width={800} height={400} loading="lazy" />
           <div class="gallery-overlay">
-            <h3>Nuestras Instalaciones</h3>
+            <span class="gallery-label" aria-hidden="true">Nuestras Instalaciones</span>
           </div>
         </div>
         <div class="gallery-item reveal">
-          <img src="/images/zona_pesas.webp" alt="Zona de peso libre y racks" width="400" height="600" loading="lazy" />
+          <Image src={galleryZonaPesas} alt="Zona de peso libre y racks" width={400} height={600} loading="lazy" />
           <div class="gallery-overlay">
-            <h3>Zona de Pesas</h3>
+            <span class="gallery-label" aria-hidden="true">Zona de Pesas</span>
           </div>
         </div>
         <div class="gallery-item reveal">
-          <img src="/images/pesas.webp" alt="Equipamiento de musculación profesional" width="400" height="300" loading="lazy" />
+          <Image src={galleryPesas} alt="Equipamiento de musculación profesional" width={400} height={300} loading="lazy" />
           <div class="gallery-overlay">
-            <h3>Musculación</h3>
+            <span class="gallery-label" aria-hidden="true">Musculación</span>
           </div>
         </div>
         <div class="gallery-item reveal">
-          <img src="/images/cintas.webp" alt="Zona cardio con cintas de correr de última generación" width="400" height="300" loading="lazy" />
+          <Image src={galleryCintas} alt="Zona cardio con cintas de correr de última generación" width={400} height={300} loading="lazy" />
           <div class="gallery-overlay">
-            <h3>Zona Cardio</h3>
+            <span class="gallery-label" aria-hidden="true">Zona Cardio</span>
           </div>
         </div>
       </div>
@@ -416,7 +422,6 @@ import Layout from '../layouts/Layout.astro';
             <span>La conversación continuará a través de WhatsApp.</span>
           </p>
         </form>
-
       </div>
 
       <!-- Map -->
@@ -433,18 +438,39 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- FLOATING CTA BUTTON -->
+  <div class="floating-cta" id="floating-cta">
+    <button class="floating-cta__trigger" id="floating-cta-trigger" aria-label="Abrir opciones de contacto">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+    <div class="floating-cta__panel" id="floating-cta-panel">
+      <div class="floating-cta__overlay"></div>
+      <div class="floating-cta__content">
+        <p class="floating-cta__title">Contacta con nosotros y resolveremos todas tus dudas</p>
+        <div class="floating-cta__actions">
+          <a href="https://wa.me/34633656503" target="_blank" rel="noopener noreferrer" class="btn btn--primary" aria-label="Contactar por WhatsApp con NEWFIT">
+            Contactar ahora
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <a href="#hero" class="footer-logo">
-        <img src="/icons/newfit_blanco.svg" alt="NEWFIT Logo" width="150" height="34" />
+      <a href="#hero" class="footer-logo" aria-label="Volver al hero">
+        <img src="/icons/newfit_blanco.svg" alt="NEWFIT Logo" width="150" height="34" loading="lazy" />
       </a>
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Newfit S.L.U. Todos los derechos reservados.</p>
         <ul class="footer-links" style="list-style: none; display: flex; gap: 20px; font-size: 0.85rem; padding: 0;">
           <li><a href="/politica-de-privacidad" style="color: var(--gray); text-decoration: none;">Política de Privacidad y LSSI</a></li>
         </ul>
-        <p class="credits" style="font-size: 0.8rem; color: var(--gray-dark); margin-top: 10px;">Proyecto gestionado por <a href="https://www.sport-consulting.net/" target="_blank" rel="noopener noreferrer" style="color: var(--gray); text-decoration: underline;">Diego San Miguel y Sport Consulting</a></p>
+        <p class="credits" style="font-size: 0.8rem; color: var(--gray-dark); margin-top: 10px;">Proyecto gestionado por Diego San Miguel y <a href="https://www.sport-consulting.net/" target="_blank" rel="noopener noreferrer" style="color: var(--gray); text-decoration: underline;">Sport Consulting</a></p>
       </div>
     </div>
   </footer>
@@ -467,6 +493,30 @@ import Layout from '../layouts/Layout.astro';
         const whatsappUrl = `https://api.whatsapp.com/send?phone=34633656503&text=${encodedText}`;
 
         window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    // Floating CTA functionality
+    const floatingCtaTrigger = document.getElementById('floating-cta-trigger') as HTMLButtonElement;
+    const floatingCtaPanel = document.getElementById('floating-cta-panel') as HTMLDivElement;
+    const floatingCta = document.getElementById('floating-cta') as HTMLDivElement;
+
+    if (floatingCtaTrigger && floatingCtaPanel && floatingCta) {
+      floatingCtaTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        floatingCta.classList.toggle('active');
+      });
+
+      // Prevent panel clicks from closing
+      floatingCtaPanel.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!floatingCta.contains(e.target as Node)) {
+          floatingCta.classList.remove('active');
+        }
       });
     }
   </script>

@@ -1012,12 +1012,14 @@ h6 {
   padding: 24px;
 }
 
-.gallery-overlay h3 {
+.gallery-overlay .gallery-label {
   color: var(--white);
   font-size: 1.2rem;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
   transform: translateY(20px);
-  transition: transform var(--transition);
+  transition: transform var(--transition-slow);
 }
 
 .gallery-item:hover img {
@@ -1028,7 +1030,7 @@ h6 {
   opacity: 1;
 }
 
-.gallery-item:hover .gallery-overlay h3 {
+.gallery-item:hover .gallery-overlay .gallery-label {
   transform: translateY(0);
 }
 
@@ -1738,5 +1740,197 @@ h6 {
   [data-theme="light"] .navbar-links {
     background: #FFFFFF;
     box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ========================================
+   FLOATING CTA BUTTON
+   ======================================== */
+.floating-cta {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+.floating-cta__trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-red);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.floating-cta__trigger:hover {
+  background: var(--red-dark);
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(228, 0, 43, 0.5);
+}
+
+.floating-cta__trigger svg {
+  width: 24px;
+  height: 24px;
+}
+
+.floating-cta__panel {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  background: var(--black-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.floating-cta.active .floating-cta__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-cta__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(228, 0, 43, 0.1) 0%, rgba(228, 0, 43, 0.05) 100%);
+  pointer-events: none;
+}
+
+.floating-cta__content {
+  position: relative;
+  padding: 24px;
+  z-index: 1;
+}
+
+.floating-cta__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.floating-cta__text {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.floating-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.btn--primary {
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+}
+
+.btn--primary:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-red);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--gray-dark);
+}
+
+.btn--secondary:hover {
+  background: var(--gray-dark);
+  border-color: var(--gray);
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .floating-cta__panel {
+  background: var(--white);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .floating-cta__title {
+  color: var(--black);
+}
+
+[data-theme="light"] .floating-cta__text {
+  color: #666666;
+}
+
+[data-theme="light"] .btn--secondary {
+  color: var(--black);
+  border-color: #E0E0E0;
+}
+
+[data-theme="light"] .btn--secondary:hover {
+  background: #F5F5F5;
+  border-color: #CCCCCC;
+  color: var(--black);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .floating-cta {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-cta__trigger {
+    width: 56px;
+    height: 56px;
+  }
+
+  .floating-cta__panel {
+    width: calc(100vw - 40px);
+    max-width: 350px;
+    bottom: 76px;
+  }
+
+  .floating-cta__content {
+    padding: 20px;
+  }
+
+  .floating-cta__title {
+    font-size: 1rem;
+  }
+
+  .floating-cta__text {
+    font-size: 0.85rem;
   }
 }
