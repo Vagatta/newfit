@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+<<<<<<< HEAD
 Sitemap: https://newfit.es/sitemap-index.xml
+=======
+Sitemap: https://newfitgimnasio.com/sitemap-index.xml
+>>>>>>> bdb98a70b01322c051b4655a9947fc6aaef471b7

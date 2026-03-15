@@ -407,6 +407,7 @@ h6 {
   padding: 0 20px;
 }
 
+<<<<<<< HEAD
 /* App Downloads Section */
 .app-downloads {
   margin-bottom: 30px;
@@ -485,6 +486,8 @@ h6 {
   transition: color var(--transition);
 }
 
+=======
+>>>>>>> bdb98a70b01322c051b4655a9947fc6aaef471b7
 .hero-badge {
   display: inline-block;
   background: rgba(228, 0, 43, 0.15);
