@@ -1,0 +1,580 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../../public/images/hero-bg.png';
+import galleryGeneral from '../../public/images/general.webp';
+import galleryZonaPesas from '../../public/images/zona_pesas.webp';
+import galleryPesas from '../../public/images/pesas.webp';
+import galleryCintas from '../../public/images/cintas.webp';
+---
+
+<Layout title="NEWFIT — Tu Gimnasio en Tudela de Duero" description="Entrena con nosotros en el mejor gimnasio de Tudela de Duero. Instalaciones premium, equipamiento de última generación y entrenadores profesionales.">
+
+  <!-- Schema.org para LocalBusiness -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExerciseGym",
+      "name": "NEWFIT",
+      "image": "https://newfit.es/images/hero-bg.png",
+      "@id": "https://newfit.es/",
+      "url": "https://newfit.es/",
+      "telephone": "+34633656503",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C. del Veintinueve de Diciembre, 5",
+        "addressLocality": "Tudela de Duero",
+        "postalCode": "47320",
+        "addressRegion": "Valladolid",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.5847,
+        "longitude": -4.5802
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "06:00",
+          "closes": "23:00"
+        }
+      ]
+    }
+  </script>
+
+  <!-- FAQ Schema for Pricing/General info -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la cuota mensual de NEWFIT en Tudela de Duero?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestra cuota mensual estándar es de 35€ al mes con compromiso o 39€ al mes sin compromiso de permanencia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El gimnasio NEWFIT tiene permanencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ofrecemos opciones tanto con como sin permanencia. Puedes elegir planes flexibles que te permiten darte de baja en cualquier momento sin ataduras."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Existe alguna cuota ahorro o familiar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, disponemos de Cuotas Duo por 70€/mes para parejas o amigos, y Cuotas Familiares por 105€/mes para hasta 3 miembros. También tenemos un pago único anual de 340€ para un ahorro máximo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede probar el gimnasio un día suelto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "¡Por supuesto! Tenemos un pase diario por 8€ y bonos de 5 accesos por 19.90€, ideales para quienes quieren entrenar de forma ocasional."
+          }
+        }
+      ]
+    }
+  </script>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="navbar-logo" aria-label="Ir al inicio">
+        <img src="/icons/newfit_blanco.svg" alt="NEWFIT Logo" width="150" height="34" />
+      </a>
+      <ul class="navbar-links" id="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#tarifas">Tarifas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#tarifas" class="navbar-cta">Únete Ya</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <Image src={heroBg} alt="Interior del gimnasio con equipamiento profesional" width={1920} height={1080} loading="eager" />
+    </div>
+    <div class="hero-content">
+      <div class="app-downloads">
+        <span class="app-downloads-text">Descarga nuestra app</span>
+        <div class="app-buttons">
+          <a href="https://apps.apple.com/es/app/newfit-tudela-de-duero/id6749950333" target="_blank" rel="noopener noreferrer" class="app-btn" aria-label="Descargar en App Store">
+            <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 21.8-88.5 21.8-11.4 0-51.1-20.8-84.6-20.8-54 0-108.3 40.2-108.3 118.2 0 47.9 14.8 111.4 46.3 158.4l24.4 36.6c18.5 27.8 45.4 60.1 82.5 60.1l.1-.3c27.5 0 30.6-22.1 66.8-22.1 36 0 38 22.1 67.5 22.1 37.5 0 61.1-28.8 82.5-60.1 19.3-28.7 30.8-63.1 31.8-66.6-88.6-35.6-78.6-118-1-118.2zm-126.3-156c11.4-13.8 24.3-33.1 24.3-56.1 0-3.8-.4-7.5-1.1-11.1-22.1 1-48.4 15.1-64.2 33.8-13.3 15.6-25.2 34.6-25.2 56.6 0 4 0 7.8 1 11.5 26.6 1.7 48.4-11.5 65.2-34.7z"/></svg>
+            <div class="app-btn-text">
+              <span>Descargar en</span>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.sportconsulting.newfitgym&hl=es" target="_blank" rel="noopener noreferrer" class="app-btn" aria-label="Descargar en Google Play">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+            <div class="app-btn-text">
+              <span>DISPONIBLE EN</span>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+      <h1>
+        Tu Gimnasio en
+        <span class="highlight">Tudela de Duero</span>
+      </h1>
+      <p class="hero-subtitle">
+        Supera tus límites en el centro fitness de referencia en Tudela de Duero. Instalaciones de última generación y entrenamiento profesional para alcanzar tu mejor versión en Valladolid.
+        <br/><br/>
+        Equipado por <a href="https://www.binomfitness.es/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: underline;">Binom Fitness</a>
+      </p>
+      <div class="hero-buttons">
+        <a href="#tarifas" class="btn-primary">¡Nuestras Tarifas!</a>
+        <a href="#contacto" class="btn-outline">Contáctanos</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TARIFAS SECTION -->
+  <section class="pricing" id="tarifas">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Nuestros Planes</span>
+        <h2>Tarifas</h2>
+        <p>Elige el plan que mejor se adapte a ti. Sin permanencia, sin compromiso.</p>
+      </div>
+      <div class="pricing-groups">
+
+        <!-- Cuotas Principales (Split Cards) -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Cuotas Principales</h3>
+          <div class="pricing-grid">
+            <!-- Mensual Neon -->
+            <div class="pricing-card-neon">
+              <div class="pcn-half pcn-left">
+                <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/muscle-flexing.svg); mask-image: url(/icons/muscle-flexing.svg);"></div>
+                <h3 class="pcn-title">Con Compromiso</h3>
+                <div class="pcn-price">
+                  <span class="amount">35€</span><span class="period">/mes</span>
+                </div>
+                <ul class="pcn-features">
+                  <li>Activación: 0€</li>
+                  <li>Cuota Bonificada</li>
+                  <li>Acceso 24/7</li>
+                  <li>Todas las zonas</li>
+                </ul>
+                <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=665&type=TkVXRklUIEdZTXwzMDU=" class="pcn-btn-solid pcn-btn">¡Quiero esta!</a>
+              </div>
+
+              <div class="pcn-divider"></div>
+
+              <div class="pcn-half pcn-right">
+                <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/running.svg); mask-image: url(/icons/running.svg);"></div>
+                <h3 class="pcn-title">Sin Compromiso</h3>
+                <div class="pcn-price">
+                  <span class="amount">39€</span><span class="period">/mes</span>
+                </div>
+                <ul class="pcn-features">
+                  <li>Activación: 20€</li>
+                  <li>Baja en cualquier momento</li>
+                  <li>Todas las instalaciones</li>
+                  <li>Sin ataduras</li>
+                </ul>
+                <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=664&type=TkVXRklUIEdZTXwzMDU=" class="pcn-btn-outline pcn-btn">¡Quiero esta!</a>
+              </div>
+            </div>
+
+            <!-- Trimestral Neon -->
+            <div class="pricing-card-neon">
+              <div class="pcn-half pcn-left">
+                <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/squats.svg); mask-image: url(/icons/squats.svg);"></div>
+                <h3 class="pcn-title">Con Compromiso</h3>
+                <div class="pcn-price">
+                  <span class="amount">90€</span><span class="period">/trim</span>
+                </div>
+                <ul class="pcn-features">
+                  <li>Activación: 0€</li>
+                  <li>Equivale a 30€/mes</li>
+                  <li>Pago cada 3 meses</li>
+                  <li>Acceso ilimitado</li>
+                </ul>
+                <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=676&type=TkVXRklUIEdZTXwzMDU=" class="pcn-btn-solid pcn-btn">¡Quiero esta!</a>
+              </div>
+
+              <div class="pcn-divider"></div>
+
+              <div class="pcn-half pcn-right">
+                <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/deadlift.svg); mask-image: url(/icons/deadlift.svg);"></div>
+                <h3 class="pcn-title">Sin Compromiso</h3>
+                <div class="pcn-price">
+                  <span class="amount">105€</span><span class="period">/trim</span>
+                </div>
+                <ul class="pcn-features">
+                  <li>Activación: 20€</li>
+                  <li>Equivale a 35€/mes</li>
+                  <li>Libertad de renovación</li>
+                  <li>Acceso ilimitado</li>
+                </ul>
+                <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=666&type=TkVXRklUIEdZTXwzMDU=" class="pcn-btn-outline pcn-btn">¡Quiero esta!</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Grupo 2: Especiales y Ahorro -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Especiales y Ahorro</h3>
+          <div class="pricing-grid">
+            <!-- Anual -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/battle-ropes.svg); mask-image: url(/icons/battle-ropes.svg);"></div>
+              <h3 class="pricing-name">Cuota Anual</h3>
+              <p class="pricing-desc">Pago Único Anual</p>
+              <div class="pricing-price">
+                <span class="amount">340€</span>
+                <span class="period">/año</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Sin compromiso permanencia</li>
+                <li>Sencillo y directo</li>
+                <li>Mejor precio total</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=677&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Duo -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/functional-training.svg); mask-image: url(/icons/functional-training.svg);"></div>
+              <h3 class="pricing-name">Cuota Duo</h3>
+              <p class="pricing-desc">Entrena con tu Pareja/Amigo</p>
+              <div class="pricing-price">
+                <span class="amount">70€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Motivación compartida</li>
+                <li>Precio conjunto</li>
+                <li>Todas las zonas</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=667&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Familiar -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/personal-trainer.svg); mask-image: url(/icons/personal-trainer.svg);"></div>
+              <h3 class="pricing-name">Familiar 3M</h3>
+              <p class="pricing-desc">Hasta 3 Miembros Familiares</p>
+              <div class="pricing-price">
+                <span class="amount">105€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 0€</li>
+                <li>Ahorro en familia</li>
+                <li>Precio total por 3 personas</li>
+                <li>Sin permanencia</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=678&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grupo 3: Entrenos Cortos y Bonos -->
+        <div class="pricing-group reveal">
+          <h3 class="pricing-group-title">Pases y Bonos</h3>
+          <div class="pricing-grid">
+            <!-- Pase 1 Día -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/treadmill.svg); mask-image: url(/icons/treadmill.svg);"></div>
+              <h3 class="pricing-name">Pase 1 Día</h3>
+              <p class="pricing-desc">Pago Único · 1 Acceso</p>
+              <div class="pricing-price">
+                <span class="amount">8€</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Sin compromiso</li>
+                <li>Activación 0€</li>
+                <li>Acceso completo</li>
+                <li>Uso en el día</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/entradas.aspx?header=false&footer=false&nav=false&lang=es-ES&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Fines de Semana -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/skipping-rope.svg); mask-image: url(/icons/skipping-rope.svg);"></div>
+              <h3 class="pricing-name">Plan Finde</h3>
+              <p class="pricing-desc">Viernes, Sábado y Domingo</p>
+              <div class="pricing-price">
+                <span class="amount">22.50€</span>
+                <span class="period">/mes</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Activación: 20€</li>
+                <li>Para fines de semana</li>
+                <li>Ideal vida ocupada</li>
+                <li>Sin permanencia</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=679&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+
+            <!-- Bono 5 Accesos -->
+            <div class="pricing-card">
+              <div class="pricing-icon-wrapper" style="-webkit-mask-image: url(/icons/pushups.svg); mask-image: url(/icons/pushups.svg);"></div>
+              <h3 class="pricing-name">Bono 5 Accesos</h3>
+              <p class="pricing-desc">Pago Único · 5 Entrenos</p>
+              <div class="pricing-price">
+                <span class="amount">19.90€</span>
+              </div>
+              <ul class="pricing-features">
+                <li>Ideal para alternar</li>
+                <li>Precio por sesión: 3.98€</li>
+                <li>Sin caducidad inmediata</li>
+                <li>Activación 0€</li>
+              </ul>
+              <a href="https://deporweb.net/altaonline/nueva.aspx?header=false&footer=false&nav=false&lang=es-ES&ref=680&type=TkVXRklUIEdZTXwzMDU=" class="btn-primary">¡Quiero esta!</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA SECTION -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Nuestras Instalaciones</span>
+        <h2>Galería</h2>
+        <p>Descubre nuestro espacio diseñado para que entrenes al máximo nivel.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <Image src={galleryGeneral} alt="Vista general de nuestras instalaciones premium" width={800} height={400} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-label" aria-hidden="true">Nuestras Instalaciones</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <Image src={galleryZonaPesas} alt="Zona de peso libre y racks" width={400} height={600} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-label" aria-hidden="true">Zona de Pesas</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <Image src={galleryPesas} alt="Equipamiento de musculación profesional" width={400} height={300} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-label" aria-hidden="true">Musculación</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <Image src={galleryCintas} alt="Zona cardio con cintas de correr de última generación" width={400} height={300} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-label" aria-hidden="true">Zona Cardio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO SECTION -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span>Hablemos</span>
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna pregunta? Escríbenos y te responderemos lo antes posible.</p>
+      </div>
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <h4>Dirección</h4>
+              <p>C. del Veintinueve de Diciembre, 5<br/>47320 Tudela de Duero, Valladolid</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <h4>Teléfono</h4>
+              <p><a href="tel:+34633656503">+34 633 65 65 03</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:newfites@gmail.com">newfites@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <h4>Horario</h4>
+              <p>Lunes a Domingo:<br/>6:00 - 23:00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="nombre" placeholder="Tu nombre" required id="input-name" />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Tu email" required id="input-email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="asunto" placeholder="Asunto" id="input-subject" />
+          </div>
+          <div class="form-group">
+            <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required id="input-message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="btn-submit">Enviar Mensaje</button>
+          <p class="contact-form-note">
+            <span>Al enviar este formulario aceptas que tus datos sean utilizados para responder a tu consulta.</span>
+            <span>La conversación continuará a través de WhatsApp.</span>
+          </p>
+        </form>
+      </div>
+
+      <!-- Map -->
+      <div class="contact-map reveal">
+        <iframe
+          src="https://maps.google.com/maps?q=C.%20del%20Veintinueve%20de%20Diciembre,%205,%20Tudela%20de%20Duero,%20Valladolid&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación del gimnasio en Google Maps"
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLOATING CTA BUTTON -->
+  <div class="floating-cta" id="floating-cta">
+    <button class="floating-cta__trigger" id="floating-cta-trigger" aria-label="Abrir opciones de contacto">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.396.015 12.03a11.934 11.934 0 001.576 6.12L0 24l6.102-1.6c1.863.516 3.827.788 5.792.788h.005c6.637 0 12.032-5.396 12.035-12.031a11.85 11.85 0 00-3.52-8.506"} />
+      </svg>
+    </button>
+    <div class="floating-cta__panel" id="floating-cta-panel">
+      <div class="floating-cta__overlay"></div>
+      <div class="floating-cta__content">
+        <p class="floating-cta__title">Contacta con nosotros y resolveremos todas tus dudas</p>
+        <div class="floating-cta__actions">
+          <a href="https://wa.me/34633656503" target="_blank" rel="noopener noreferrer" class="btn btn--primary" aria-label="Contactar por WhatsApp con NEWFIT">
+            Contactar ahora
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <a href="#hero" class="footer-logo" aria-label="Volver al hero">
+        <img src="/icons/newfit_blanco.svg" alt="NEWFIT Logo" width="150" height="34" loading="lazy" />
+      </a>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Newfit S.L.U. Todos los derechos reservados.</p>
+        <ul class="footer-links" style="list-style: none; display: flex; gap: 20px; font-size: 0.85rem; padding: 0;">
+          <li><a href="/politica-de-privacidad" style="color: var(--gray); text-decoration: none;">Política de Privacidad y LSSI</a></li>
+        </ul>
+        <p class="credits" style="font-size: 0.8rem; color: var(--gray-dark); margin-top: 10px;">Proyecto gestionado por <a href="https://diegodev-portfolio.vercel.app/" target  ="_blank" rel="noopener noreferrer" style="color: var(--gray); text-decoration: underline;">Diego San Miguel</a> y <a href="https://www.sport-consulting.net/" target="_blank" rel="noopener noreferrer" style="color: var(--gray); text-decoration: underline;">Sport Consulting</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const nombre = formData.get('nombre');
+        const email = formData.get('email');
+        const asunto = formData.get('asunto') || 'Sin asunto';
+        const message = formData.get('mensaje');
+
+        const text = `*Nueva consulta desde la web*\n\n*Nombre:* ${nombre}\n*Email:* ${email}\n*Asunto:* ${asunto}\n*Mensaje:* ${message}`;
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=34633656503&text=${encodedText}`;
+
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    // Floating CTA functionality
+    const floatingCtaTrigger = document.getElementById('floating-cta-trigger') as HTMLButtonElement;
+    const floatingCtaPanel = document.getElementById('floating-cta-panel') as HTMLDivElement;
+    const floatingCta = document.getElementById('floating-cta') as HTMLDivElement;
+
+    if (floatingCtaTrigger && floatingCtaPanel && floatingCta) {
+      floatingCtaTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        floatingCta.classList.toggle('active');
+      });
+
+      // Prevent panel clicks from closing
+      floatingCtaPanel.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!floatingCta.contains(e.target as Node)) {
+          floatingCta.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</Layout>

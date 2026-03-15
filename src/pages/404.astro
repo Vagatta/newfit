@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Página no encontrada | NEWFIT" description="Lo sentimos, la página que buscas no existe en NEWFIT. Vuelve al inicio para seguir entrenando.">
+  <main class="error-page">
+    <div class="container">
+      <div class="error-content">
+        <span class="error-code">404</span>
+        <h1>Página no encontrada</h1>
+        <p>Parece que te has salido de la zona de entrenamiento. La página que buscas no existe o ha sido movida.</p>
+        <div class="error-actions">
+          <a href="/" class="btn-primary">Volver al Inicio</a>
+          <a href="/#contacto" class="btn-outline">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .error-code {
+    display: block;
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-family: var(--font-workout);
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 8rem;
+    }
+  }
+</style>
