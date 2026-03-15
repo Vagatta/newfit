@@ -405,12 +405,14 @@ h6 {
   text-align: center;
   max-width: 900px;
   padding: 0 20px;
+  margin-top: -60px;
+  /* Shift content up */
 }
 
-<<<<<<< HEAD
 /* App Downloads Section */
 .app-downloads {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  /* Increased from 30px */
   animation: fadeInDown 1s ease both;
 }
 
@@ -421,7 +423,8 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--white-off);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  /* Increased from 12px */
   opacity: 0.8;
 }
 
@@ -486,8 +489,6 @@ h6 {
   transition: color var(--transition);
 }
 
-=======
->>>>>>> bdb98a70b01322c051b4655a9947fc6aaef471b7
 .hero-badge {
   display: inline-block;
   background: rgba(228, 0, 43, 0.15);
@@ -774,14 +775,14 @@ h6 {
   background: #0f0f0f;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pricing-card-neon:hover {
   border-color: var(--red);
-  box-shadow: 0 15px 45px rgba(228,0,43,0.15);
+  box-shadow: 0 15px 45px rgba(228, 0, 43, 0.15);
 }
 
 .pcn-half {
@@ -796,34 +797,41 @@ h6 {
 }
 
 .pcn-half:hover {
-  transform: scale(1.08); /* Increased pop effect */
+  transform: scale(1.08);
+  /* Increased pop effect */
   z-index: 4;
 }
 
 .pcn-left {
-  background: radial-gradient(ellipse at left center, rgba(228,0,43,0.1) 0%, transparent 70%);
-  padding-right: 60px; /* Space for diagonal */
+  background: radial-gradient(ellipse at left center, rgba(228, 0, 43, 0.1) 0%, transparent 70%);
+  padding-right: 60px;
+  /* Space for diagonal */
 }
 
 .pcn-left::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  border: 1px solid rgba(228,0,43,0.3);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid rgba(228, 0, 43, 0.3);
   border-right: none;
   border-radius: 12px 0 0 12px;
   pointer-events: none;
 }
 
 .pcn-right {
-  padding-left: 60px; /* Space for diagonal */
+  padding-left: 60px;
+  /* Space for diagonal */
 }
 
 /* Match standard pricing-card elements inside neon */
 .pcn-half .pricing-icon-wrapper {
   margin-bottom: 20px;
   background-color: var(--white);
-  opacity: 0.7; /* Dimmer on right by default */
+  opacity: 0.7;
+  /* Dimmer on right by default */
   transition: all 0.4s ease;
   width: 60px;
   height: 60px;
@@ -840,13 +848,16 @@ h6 {
 
 .pcn-left .pricing-icon-wrapper {
   background-color: var(--red);
-  opacity: 1; /* Full brightness on left */
+  opacity: 1;
+  /* Full brightness on left */
 }
 
 .pcn-half:hover .pricing-icon-wrapper {
-  transform: scale(1.2); /* Bigger icon jump */
+  transform: scale(1.2);
+  /* Bigger icon jump */
   opacity: 1;
-  background-color: var(--red); /* Right icon turns red on hover */
+  background-color: var(--red);
+  /* Right icon turns red on hover */
 }
 
 .pcn-divider {
@@ -856,8 +867,9 @@ h6 {
   left: 50%;
   width: 2px;
   background: var(--red);
-  box-shadow: 0 0 15px 3px rgba(228,0,43,1), 0 0 30px 6px rgba(228,0,43,0.5);
-  transform: translateX(-50%) rotate(12deg); /* / shape */
+  box-shadow: 0 0 15px 3px rgba(228, 0, 43, 1), 0 0 30px 6px rgba(228, 0, 43, 0.5);
+  transform: translateX(-50%) rotate(12deg);
+  /* / shape */
   z-index: 3;
 }
 
@@ -885,12 +897,15 @@ h6 {
   align-items: baseline;
   justify-content: center;
 }
+
 .pcn-price .amount {
   font-family: var(--font-workout);
   font-size: 4.5rem;
-  color: var(--red); /* Required update */
+  color: var(--red);
+  /* Required update */
   line-height: 1;
 }
+
 .pcn-price .period {
   font-family: var(--font-main);
   color: var(--gray);
@@ -908,6 +923,7 @@ h6 {
   width: 100%;
   max-width: 220px;
 }
+
 .pcn-features li {
   color: #ccc;
   font-size: 0.95rem;
@@ -915,6 +931,7 @@ h6 {
   align-items: center;
   gap: 12px;
 }
+
 .pcn-features li::before {
   content: '✓';
   color: var(--red);
@@ -943,7 +960,7 @@ h6 {
   background: var(--red);
   color: var(--white);
   border: 2px solid var(--red);
-  box-shadow: 0 5px 15px rgba(228,0,43,0.3);
+  box-shadow: 0 5px 15px rgba(228, 0, 43, 0.3);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -964,7 +981,7 @@ h6 {
 .pcn-btn-solid:hover {
   color: var(--red);
   border-color: var(--white);
-  box-shadow: 0 5px 20px rgba(228,0,43,0.5);
+  box-shadow: 0 5px 20px rgba(228, 0, 43, 0.5);
   transform: translateY(-2px);
 }
 
@@ -989,22 +1006,28 @@ h6 {
   background: #F8F8F8;
   border-color: #E0E0E0;
 }
+
 [data-theme="light"] .pcn-left {
-  background: radial-gradient(ellipse at left center, rgba(228,0,43,0.05) 0%, transparent 70%);
+  background: radial-gradient(ellipse at left center, rgba(228, 0, 43, 0.05) 0%, transparent 70%);
 }
+
 [data-theme="light"] .pcn-left::before {
-  border-color: rgba(228,0,43,0.2);
+  border-color: rgba(228, 0, 43, 0.2);
 }
+
 [data-theme="light"] .pcn-price .amount {
   color: #111;
 }
+
 [data-theme="light"] .pcn-features li {
   color: #444;
 }
+
 [data-theme="light"] .pcn-btn-outline {
   color: #111;
   border-color: #ccc;
 }
+
 [data-theme="light"] .pcn-btn-outline:hover {
   background: #eee;
   border-color: #999;
@@ -1014,6 +1037,7 @@ h6 {
   .pricing-card-neon {
     flex-direction: column;
   }
+
   .pcn-divider {
     top: 50%;
     left: -10%;
@@ -1022,14 +1046,17 @@ h6 {
     height: 2px;
     transform: translateY(-50%) rotate(-5deg);
   }
+
   .pcn-left {
     padding: 40px 20px 60px 20px;
   }
+
   .pcn-left::before {
     border-radius: 12px 12px 0 0;
-    border-right: 1px solid rgba(228,0,43,0.3);
+    border-right: 1px solid rgba(228, 0, 43, 0.3);
     border-bottom: none;
   }
+
   .pcn-right {
     padding: 60px 20px 40px 20px;
   }
@@ -1440,6 +1467,16 @@ h6 {
     font-size: clamp(2.5rem, 8vw, 5rem);
   }
 
+  .hero-content {
+    margin-top: -30px;
+    /* Adjusted offset for mobile */
+  }
+
+  .app-downloads {
+    margin-bottom: 35px;
+    /* Adjusted spacing for mobile */
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 420px;
@@ -1680,7 +1717,7 @@ h6 {
 
 [data-theme="light"] .pricing-card-neon:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(228,0,43,0.15);
+  box-shadow: 0 20px 45px rgba(228, 0, 43, 0.15);
   border-color: var(--red);
 }
 
