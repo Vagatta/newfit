@@ -124,28 +124,6 @@ const {
         });
       });
 
-      // Theme toggle
-      const themeSwitch = document.getElementById('theme-switch');
-      const htmlEl = document.documentElement;
-
-      // Load saved theme
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'light') {
-        htmlEl.setAttribute('data-theme', 'light');
-      }
-
-      if (themeSwitch) {
-        themeSwitch.addEventListener('click', () => {
-          const isLight = htmlEl.getAttribute('data-theme') === 'light';
-          if (isLight) {
-            htmlEl.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
-          } else {
-            htmlEl.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-          }
-        });
-      }
     </script>
   </body>
 </html>
